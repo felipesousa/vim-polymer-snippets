@@ -1,0 +1,87 @@
+snippet pe "Polymer element" b
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="$1">
+	<template>
+		<style>
+			:host {
+				display: block;
+			}
+		</style>
+		$0
+	</template>
+	<script>
+		(function() {
+			'use strict';
+			Polymer({
+				is: '$1'
+			});
+		})();
+	</script>
+</dom-module>
+endsnippet
+
+snippet pes "Polymer element style section import" b
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="$1.css">
+
+<dom-module id="$3">
+	<template>
+		<style include="$2"></style>
+		$0
+	</template>
+	<script>
+		(function() {
+			'use strict';
+			Polymer({
+				is: '$3'
+			});
+		})();
+	</script>
+</dom-module>
+endsnippet 
+
+snippet pens "Polymer element without <style>" b
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="$1">
+	<template>
+		$0
+	</template>
+	<script>
+		(function() {
+			'use strict';
+			Polymer({
+				is: '$1'
+			});
+		})();
+	</script>
+</dom-module>
+endsnippet
+
+snippet dom-repeat "<dom-repeat ...>" b
+<template is="dom-repeat" items="{{$1}}" as="$2">
+	$0
+</template>
+endsnippet
+
+snippet dom-if "<dom-if ...>" b
+<template is="dom-if" if="{{$1}}">
+ 	$0
+</template>
+endsnippet
+
+snippet dom-bind "<dom-bind ...>" b
+<template is="dom-bind">
+	$0
+</template>
+endsnippet
+
+snippet import "<link rel="import" href.." b
+<link rel="import" href="$0">
+endsnippet
+
+snippet importb "<link rel='import' href='bower_com..>" b
+<link rel="import" href="bower_components/$0/$0.html"> 
+endsnippet
+
